@@ -1,7 +1,7 @@
 # macefash
-personal FaceMash clone
+<i>personal FaceMash clone</i>
 
-Can be run locally (on port 80, by default) using the following command:
-<samp><strong>sudo python runserver.py</strong></samp>
+<p>Can be run locally (on port 80, by default) using the following command:</p>
+<p><samp><strong>sudo python runserver.py</strong></samp></p>
 
-Other ports usually don't require sudo access.
+<p>Other ports usually don't require sudo access.</p>
