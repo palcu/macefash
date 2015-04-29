@@ -1,0 +1,29 @@
+from app import db
+from models import Girl
+
+for girl in db.session.query(Girl).all():
+  print "girl #%i -------------------------------------" % girl.id
+  print girl.pic[:-1]
+
+  if "graph.facebook" in girl.pic:
+    print "current girl already has the right picture url. moving on..."
+    print
+    continue
+
+  ans = raw_input("know the username? (y/n) ")
+  if ans != 'y': continue
+
+  ans = raw_input("the username is: ")
+  newPic = u'https://graph.facebook.com/%s/picture?width=500&height=500' % ans
+
+  print "i'm going to set the new picture: %s" % newPic
+  raw_input()
+
+  try:
+    girl.pic = newPic
+    db.session.commit()
+    print "DONE!"
+  except:
+    print "Something went wrong! :("
+    exit(0)
+
