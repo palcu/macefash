@@ -13,7 +13,7 @@ basePic = 'https://graph.facebook.com/%s/picture?width=%s&height=%s'
 
 """ AUTH SHIT """
 def checkAuth(username, password):
-    return (username, password) in [('schioara', 'oarba')]
+    return (username, password) in [('schioara', 'oarba')] #this should probably be moved to the db in the future
 
 def requiresAuth(f):
   @wraps(f)
